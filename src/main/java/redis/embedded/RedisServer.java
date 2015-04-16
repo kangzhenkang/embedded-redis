@@ -18,7 +18,7 @@ public class RedisServer extends AbstractRedisInstance {
         super(port);
         File executable = RedisExecProvider.defaultProvider().get();
         this.args = Arrays.asList(
-                executable.getAbsolutePath(),"redis.windows.conf",
+                executable.getAbsolutePath(),"--maxheap","10240000",
                 "--port", Integer.toString(port)
         );
 	}

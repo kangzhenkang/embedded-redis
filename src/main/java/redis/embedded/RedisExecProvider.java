@@ -63,9 +63,9 @@ public class RedisExecProvider {
 
 		File executeFile = fileExists(executablePath) ? new File(executablePath)
 				: JarUtil.extractExecutableFromJar(executablePath);
-		if (configPath != null) {
-			JarUtil.extractExecutableFromJarToPath(configPath,executeFile.getParent());
-		}
+//		if (configPath != null) {
+//			JarUtil.extractExecutableFromJarToPath(configPath,executeFile.getParent());
+//		}
 		return executeFile;
 
 	}
