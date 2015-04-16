@@ -20,4 +20,15 @@ public class JarUtil {
 
         return command;
     }
+    
+    public static File extractExecutableFromJarToPath(String executable,String path) throws IOException {
+        File tmpDir = new File(path);
+        
+        File command = new File(tmpDir, executable);
+        FileUtils.copyURLToFile(Resources.getResource(executable), command);
+        command.deleteOnExit();
+        command.setExecutable(true);
+
+        return command;
+    }
 }

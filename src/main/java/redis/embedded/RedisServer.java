@@ -18,7 +18,7 @@ public class RedisServer extends AbstractRedisInstance {
         super(port);
         File executable = RedisExecProvider.defaultProvider().get();
         this.args = Arrays.asList(
-                executable.getAbsolutePath(),
+                executable.getAbsolutePath(),"redis.windows.conf",
                 "--port", Integer.toString(port)
         );
 	}
